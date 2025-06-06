@@ -14,10 +14,15 @@ export default function OverviewPage() {
   const [metrics, setMetrics] = useState([])
 
   useEffect(() => {
-    axios.get('/overview/metrics').then(res => {
-      setMetrics(res.data)
-    })
-  }, [])
+    axios.get('/overview/metrics')
+        .then(res => {
+        setMetrics(res.data)
+        })
+        .catch(err => {
+        console.error("Failed to load metrics:", err)
+        })
+    }, [])
+
 
   return (
     <div className="p-6">
