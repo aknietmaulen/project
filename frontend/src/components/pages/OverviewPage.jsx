@@ -32,10 +32,26 @@ export default function OverviewPage() {
           <MetricCard key={idx} res={m.res} co2={m.co2_mt} cost={m.cost} />
         ))}
       </div>
-      <SystemCostChart />
-      <CarrierCostTable />
-      <GenerationMixChart data={metrics} />
-      <KazakhstanMap />
+      <div className="grid grid-cols-2 gap-6 mb-6">
+        <div className="bg-white rounded-2xl p-4 shadow-lg">
+            <SystemCostChart />
+        </div>
+
+        <div className="bg-white rounded-2xl p-4 shadow-lg">
+            <CarrierCostTable />
+        </div>
+
+        <div className="bg-white rounded-2xl p-4 shadow-lg">
+            <h3 className="text-lg font-bold text-center mb-2">Generation Mix</h3>
+            <GenerationMixChart data={metrics} />
+        </div>
+
+        <div className="bg-white rounded-2xl p-4 shadow-lg">
+            <h3 className="text-lg font-bold text-center mb-2">Kazakhstan Energy Map</h3>
+            <KazakhstanMap />
+        </div>
+        </div>
+
     </div>
   )
 }

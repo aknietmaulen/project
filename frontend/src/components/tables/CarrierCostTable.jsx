@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import axios from "axios"
-
+import "../../App.css"
 export default function CarrierCostTable() {
   const [table, setTable] = useState([])
 
@@ -14,31 +14,21 @@ export default function CarrierCostTable() {
   const columns = Object.keys(table[0])
 
   return (
-    <div className="overflow-x-auto bg-white shadow-md rounded-xl p-4 mt-6">
-      <h3 className="text-lg font-semibold mb-4 text-gray-800">Cost Table by Carrier (M€)</h3>
-      <table className="min-w-full border-collapse text-sm">
+    <div className="carrier-table-wrapper">
+      <h3 className="carrier-table-title">Cost Table by Carrier (M€)</h3>
+      <table className="carrier-table">
         <thead>
-          <tr className="bg-gray-100 text-gray-700">
+          <tr>
             {columns.map(col => (
-              <th key={col} className="border border-gray-300 px-2 py-1 text-left whitespace-nowrap">
-                {col}
-              </th>
+              <th key={col}>{col}</th>
             ))}
           </tr>
         </thead>
         <tbody>
           {table.map((row, idx) => (
-            <tr
-              key={idx}
-              className={idx % 2 === 0 ? "bg-white" : "bg-gray-50"}
-            >
+            <tr key={idx}>
               {columns.map(col => (
-                <td
-                  key={col}
-                  className="border border-gray-300 px-2 py-1 text-right"
-                >
-                  {row[col]}
-                </td>
+                <td key={col}>{row[col]}</td>
               ))}
             </tr>
           ))}

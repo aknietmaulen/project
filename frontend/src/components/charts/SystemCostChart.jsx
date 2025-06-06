@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
 import Plot from "react-plotly.js"
 import axios from "axios"
+import "../../App.css"
 
 export default function SystemCostChart() {
   const [data, setData] = useState([])
@@ -10,17 +11,15 @@ export default function SystemCostChart() {
       .then(res => setData(res.data))
   }, [])
 
-  if (!data.length) return <p>Loading cost chart...</p>
+  if (!data.length) return <p className="text-sm text-gray-500">Loading cost chart...</p>
 
   const res = data.map(d => d.res_share * 100)
   const cost = data.map(d => d.total_cost)
   const tariff = data.map(d => d.tariff)
 
   return (
-    <div className="bg-white p-4 rounded-xl shadow mb-6">
-      <h3 className="text-lg font-bold mb-2">
-        Total System Cost & Tariff vs RES Share
-      </h3>
+    <div className="graph-card">
+      <h3 className="graph-card-title">Total System Cost for 2030</h3>
       <Plot
         data={[
           {
@@ -53,7 +52,7 @@ export default function SystemCostChart() {
           }
         ]}
         layout={{
-          width: 800,
+          autosize: true,
           height: 450,
           margin: { t: 40 },
           xaxis: { title: "RES Share (%)" },
@@ -72,6 +71,9 @@ export default function SystemCostChart() {
           legend: { x: 0.5, xanchor: "center", y: -0.2, orientation: "h" },
           hovermode: "x unified"
         }}
+        useResizeHandler={true}
+        style={{ width: "100%", height: "100%" }}
+
       />
     </div>
   )
