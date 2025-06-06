@@ -5,6 +5,7 @@ import SystemCostChart from "../charts/SystemCostChart"
 import CarrierCostTable from '../tables/CarrierCostTable'
 import CostBreakdown from "../charts/CostBreakdown"
 import RampingCurve from "../charts/RampingCurve"
+import EmissionsChart from '../charts/EmissionsChart'
 
 import axios from 'axios'
 import "../../App.css"
@@ -16,27 +17,38 @@ export default function OverviewPage() {
     <div className="min-h-screen bg-[#e6f4f1] p-6">
       <h2 className="text-2xl font-bold text-gray-800 mb-6 text-center">Overview Dashboard</h2>
 
-      <div className="grid grid-cols-2 gap-6">
-        {/* LEFT column: chart + table in one card */}
-        <div className="card flex flex-col">
-          <h3 className="text-xl font-bold mb-4 text-center">Total System Cost for 2030</h3>
-          <SystemCostChart />
-          <CarrierCostTable />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {/* Card 1 */}
+        <div className="card min-w-0 h-full">
+            <SystemCostChart />
         </div>
 
-        {/* RIGHT column: two stacked cards */}
-        <div className="flex flex-col gap-6">
-          <div className="card">
+        {/* Card 2 */}
+        <div className="card min-w-0 h-full">
             <CostBreakdown />
-          </div>
-          <div className="card">
-            <RampingCurve />
-          </div>
         </div>
-      </div>
+
+        {/* Card 3 */}
+        <div className="card min-w-0 h-full">
+            <CarrierCostTable />
+        </div>
+
+        {/* Card 4 */}
+        <div className="card min-w-0 h-full">
+            <RampingCurve />
+        </div>
+
+        {/* Card 4 */}
+        <div className="card min-w-0 h-full">
+            <GenerationMixChart />
+        </div>
+
+        <div className="card min-w-0 h-full">
+            <EmissionsChart />
+        </div>
+    </div>
 
       <div className="mt-10">
-        <GenerationMixChart />
         <KazakhstanMap />
       </div>
     </div>

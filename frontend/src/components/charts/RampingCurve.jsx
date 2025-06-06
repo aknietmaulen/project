@@ -18,7 +18,7 @@ export default function RampingCurve() {
   const ramping = data.map(d => d.thermal_ramping / 1e6) // Convert to MWh
 
   return (
-    <div className="graph-card">
+    <div className="bg-white shadow rounded-xl p-4 mt-4">
       <h3 className="graph-card-title">Thermal Ramping</h3>
       <Plot
         data={[
@@ -48,7 +48,7 @@ export default function RampingCurve() {
           margin: { t: 40 }
         }}
         useResizeHandler={true}
-        style={{ width: "100%", height: "100%" }}
+        // style={{ width: "100%", height: "100%" }}
       />
     </div>
   )

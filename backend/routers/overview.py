@@ -39,3 +39,19 @@ def get_ramping_curve():
         return {"error": "File not found"}
     df = pd.read_csv(path)
     return df.to_dict(orient="records")
+
+@router.get("/generation-mix")
+def get_generation_mix():
+    path = "./data/csv/generation_mix.csv"
+    if not os.path.exists(path):
+        return {"error": "File not found"}
+    df = pd.read_csv(path)
+    return df.to_dict(orient="records")
+
+@router.get("/emissions")
+def get_emissions():
+    path = "./data/csv/emissions.csv"
+    if not os.path.exists(path):
+        return {"error": "File not found"}
+    df = pd.read_csv(path)
+    return df.to_dict(orient="records")

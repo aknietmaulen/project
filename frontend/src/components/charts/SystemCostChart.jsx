@@ -18,7 +18,8 @@ export default function SystemCostChart() {
   const tariff = data.map(d => d.tariff)
 
   return (
-    <div className="graph-card">
+    <div className="bg-white shadow rounded-xl p-4 mt-4">
+        <h3>Total System Cost</h3>
       <Plot
         data={[
           {
@@ -71,7 +72,7 @@ export default function SystemCostChart() {
           hovermode: "x unified"
         }}
         useResizeHandler={true}
-        style={{ width: "100%", height: "100%" }}
+        // style={{ width: "100%", height: "100%" }}
 
       />
     </div>
