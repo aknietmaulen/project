@@ -1,0 +1,13 @@
+Cost types,Carriers,RES 10%,RES 20%,RES 30%,RES 40%,RES 50%,RES 60%
+Capital Cost,wind,120.49,127.96,414.57,674.79,1552.46,2260.62
+Capital Cost,solar,68.83,68.83,455.91,942.4,805.2,894.82
+Capital Cost,coal,0.0,0.0,0.0,0.0,0.0,0.0
+Capital Cost,CCGT,0.0,0.0,0.0,0.0,0.0,0.0
+Capital Cost,OCGT,0.0,0.0,0.0,0.0,0.0,0.0
+Capital Cost,Total,189.32,196.78,870.48,1617.19,2357.66,3155.44
+Operational Cost,wind,10.03,26.71,97.46,153.01,346.11,490.59
+Operational Cost,solar,4.71,10.57,72.05,143.68,123.58,135.88
+Operational Cost,coal,2194.43,1891.46,1819.28,1591.74,1304.27,1019.0
+Operational Cost,CCGT,780.66,778.46,458.47,347.51,321.0,291.44
+Operational Cost,OCGT,29.43,26.14,6.52,4.58,4.16,3.72
+Operational Cost,Total,3019.26,2733.34,2453.78,2240.51,2099.12,1940.63
