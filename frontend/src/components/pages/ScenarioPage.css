@@ -1,0 +1,138 @@
+.page-wrapper {
+    padding: 40px;
+    background-color: #e6f4f1;
+    min-height: 100vh;
+  }
+  
+  .page-title {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .res-slider {
+    width: 100%;
+    max-width: 700px;
+    margin: 0 auto 40px;
+    text-align: center;
+  }
+  
+  .res-label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 500;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .slider {
+    width: 100%;
+    margin: 0 auto;
+    appearance: none;
+    height: 6px;
+    background: #fff;
+    border-radius: 4px;
+    outline: none;
+  }
+  
+  .slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #16a34a;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.4);
+  }
+  
+  .slider::-moz-range-thumb {
+    width: 18px;
+    height: 18px;
+    background: #16a34a;
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  
+  .slider-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 6px;
+    padding: 0 2px;
+  }
+  
+  .slider-step {
+    font-size: 12px;
+    color: #333;
+  }
+
+  .chart-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 685px;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    min-height: 540px; /* ← чтобы совпадала по высоте с таблицей */
+  }
+  
+
+  .chart-card canvas {
+    max-width: 350px;
+    max-height: 350px;
+    margin-top: 25px; /* ⬅️ добавили отступ сверху */
+
+  }
+  
+  .chart-title {
+    text-align: center;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  /* .chart-table-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  } */
+  
+  .chart-section {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    margin-top: 20px;
+  }
+  
+  .daily-profiles-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin-top: 40px;
+  }
+  
+  .profile-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 685px;
+  }
+  
+  .profile-title {
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 12px;
+  }
+  
+  

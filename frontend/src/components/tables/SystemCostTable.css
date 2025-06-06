@@ -1,0 +1,53 @@
+.cost-table-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 685px; /* чтобы быть равной с chart-card */
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .table-title {
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  
+  .cost-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+    border: 1px solid #d1d5db;
+  }
+  
+  .cost-table th,
+  .cost-table td {
+    padding: 6px 10px;
+    text-align: left;
+    border: 1px solid #d1d5db;
+  }
+  
+  .cost-table thead {
+    background-color: #f3f4f6;
+    font-weight: bold;
+  }
+  
+  .cost-table tbody tr.total-row td {
+    font-weight: bold;
+    background-color: #f9fafb;
+  }
+  
+  .cost-table tbody tr.cost-type-capital td {
+    padding-top: 12px;
+  }
+  
+  .cost-table tbody tr.cost-type-operational td {
+    padding-top: 20px;
+    border-top: 2px solid #e5e7eb;
+  }
+  
