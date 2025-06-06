@@ -125,18 +125,10 @@ html, body, #root {
   }
 } */
 
-.carrier-table-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 16px;
-  color: #1a1a1a;
-  text-align: center;
-}
-
 .carrier-table {
-  width: 100%;
+  width: 80%;
   border-collapse: collapse;
-  font-size: 12px;
+  font-size: 10px;
 }
 
 .carrier-table thead {

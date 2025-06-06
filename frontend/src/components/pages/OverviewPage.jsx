@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import GenerationMixChart from '../charts/GenerationMixChart'
-import KazakhstanMap from '../maps/KazakhstanMap'
+import KazakhstanMap from '../maps/SolarMapInteractive'
 import SystemCostChart from "../charts/SystemCostChart"
 import CarrierCostTable from '../tables/CarrierCostTable'
 import CostBreakdown from "../charts/CostBreakdown"
@@ -45,6 +45,10 @@ export default function OverviewPage() {
 
         <div className="card min-w-0 h-full">
             <EmissionsChart />
+        </div>
+
+        <div className="card min-w-0 h-full">
+            <KazakhstanMap />
         </div>
     </div>
 
