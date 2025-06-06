@@ -128,7 +128,7 @@ html, body, #root {
 .carrier-table {
   width: 80%;
   border-collapse: collapse;
-  font-size: 10px;
+  font-size: 8px;
 }
 
 .carrier-table thead {
