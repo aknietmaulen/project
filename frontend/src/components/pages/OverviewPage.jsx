@@ -6,6 +6,8 @@ import CarrierCostTable from '../tables/CarrierCostTable'
 import CostBreakdown from "../charts/CostBreakdown"
 import RampingCurve from "../charts/RampingCurve"
 import EmissionsChart from '../charts/EmissionsChart'
+import SolarMapHighQuality from '../maps/SolarMapInteractive'
+import WindMapHighQuality from '../maps/WindMapInteractive'
 
 import axios from 'axios'
 import "../../App.css"
@@ -47,13 +49,12 @@ export default function OverviewPage() {
             <EmissionsChart />
         </div>
 
-        <div className="card min-w-0 h-full">
-            <KazakhstanMap />
-        </div>
     </div>
-
       <div className="mt-10">
-        <KazakhstanMap />
+        <SolarMapHighQuality />
+      </div>
+      <div className="mt-10">
+        <WindMapHighQuality />
       </div>
     </div>
   )

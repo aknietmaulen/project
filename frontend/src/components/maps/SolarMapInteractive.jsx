@@ -11,7 +11,7 @@ export default function SolarMapHighQuality() {
       .catch((err) => console.error("Failed to load solar points:", err))
   }, [])
 
-  if (!points.length) return <p>Loading solar map...</p>
+  if (!points.length) return <p>Loading solar potential map...</p>
 
   const lats = points.map(p => p.lat)
   const lons = points.map(p => p.lon)
@@ -26,12 +26,15 @@ export default function SolarMapHighQuality() {
           lon: lons,
           mode: "markers",
           marker: {
-            size: 6,
+            size: values.map(v => Math.max(3, v / 200)), // make circles visibly bigger
+            sizemode: "area",
+            sizeref: 0.4, // control relative sizing
             color: values,
             colorscale: "OrRd",
             colorbar: { title: "GW" },
             cmin: 0,
             cmax: Math.max(...values),
+            opacity: 0.8
           },
           text: values.map(v => `${v.toFixed(2)} GW`),
         },
