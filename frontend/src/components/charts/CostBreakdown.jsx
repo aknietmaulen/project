@@ -19,8 +19,8 @@ export default function CostBreakdown() {
   const marginal = data.map(d => d["Marginal Cost (M€)"])
 
   return (
-    <div className="graph-card">
-      <h3 className="graph-card-title">Total System Cost breakdown</h3>
+    <div className="bg-white shadow rounded-xl p-4 mt-4">
+      <h3>Total System Cost breakdown</h3>
       <Plot
         data={[
           {
@@ -55,7 +55,7 @@ export default function CostBreakdown() {
           margin: { t: 40 }
         }}
         useResizeHandler={true}
-        style={{ width: "100%", height: "100%" }}
+        // style={{ width: "100%", height: "100%" }}
       />
     </div>
   )

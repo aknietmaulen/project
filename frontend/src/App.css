@@ -17,7 +17,6 @@
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(10px + 2vmin);
@@ -37,9 +36,6 @@
   }
 }
 
-/* App.css */
-
-/* General body setup */
 body {
   margin: 0;
   padding: 0;
@@ -48,7 +44,6 @@ body {
 }
 
 html, body, #root {
-  height: 100%;
   background-color: #daf6eb;
 }
 
@@ -87,9 +82,9 @@ html, body, #root {
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
-  padding: 24px;
+  padding: 10px;
   transition: all 0.2s ease-in-out;
-  width: 50%; /* allow full container usage */
+  width: 50%;
 }
 
 .card:hover {
@@ -122,21 +117,13 @@ html, body, #root {
   background-color: #f9fafb;
 }
 
-/* Responsive tweaks */
+/* Responsive tweaks
 @media (max-width: 768px) {
   .dashboard {
     grid-template-columns: 1fr;
     padding: 16px;
   }
-}
-
-.graph-card-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin-bottom: 16px;
-  text-align: center;
-  color: #1a1a1a;
-}
+} */
 
 .carrier-table-title {
   font-size: 20px;
@@ -149,7 +136,7 @@ html, body, #root {
 .carrier-table {
   width: 100%;
   border-collapse: collapse;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 .carrier-table thead {
