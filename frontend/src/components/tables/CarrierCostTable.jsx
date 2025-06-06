@@ -5,7 +5,7 @@ export default function CarrierCostTable() {
   const [table, setTable] = useState([])
 
   useEffect(() => {
-    axios.get("/data/csv/cost_table_by_carriers.csv")
+    axios.get("/overview/carrier-costs")
       .then(res => setTable(res.data))
   }, [])
 

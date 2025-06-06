@@ -7,7 +7,7 @@ export default function SystemCostChart() {
   const [data, setData] = useState([])
 
   useEffect(() => {
-    axios.get("/data/csv/cost_vs_tariff.csv")
+    axios.get("/overview/cost-tariff")
       .then(res => setData(res.data))
   }, [])
 
@@ -19,7 +19,6 @@ export default function SystemCostChart() {
 
   return (
     <div className="graph-card">
-      <h3 className="graph-card-title">Total System Cost for 2030</h3>
       <Plot
         data={[
           {

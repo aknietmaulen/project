@@ -1,12 +1,20 @@
 from fastapi import APIRouter, Query
-from pypsa_reader import get_geo_layers, get_scenario_details
 
 router = APIRouter()
 
 @router.get("/details")
 def fetch_scenario_data(res: float = Query(...)):
-    return get_scenario_details(res)
-
-@router.get("/map_data")
-def get_map_layers():
-    return get_geo_layers()
+    # Заглушка: вернём фиктивные данные
+    return {
+        "res": res,
+        "tariff": 0.045,
+        "ramping": 120.0,
+        "co2_mt": 25.3,
+        "total_cost": 5000,
+        "generation_mix": {
+            "coal": 60,
+            "solar": 20,
+            "wind": 10,
+            "hydro": 10
+        }
+    }

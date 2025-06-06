@@ -1,5 +1,5 @@
 import Plot from 'react-plotly.js'
-
+import "../../App.css"
 export default function GenerationMixChart({ data }) {
   if (!data) return null
 
