@@ -20,7 +20,7 @@ export default function CostBreakdown() {
 
   return (
     <div className="bg-white shadow rounded-xl p-4 mt-4">
-      <h3>Total System Cost breakdown</h3>
+      <h3>Total System Cost breakdown (M€)</h3>
       <Plot
         data={[
           {

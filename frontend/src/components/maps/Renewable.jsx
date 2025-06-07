@@ -32,7 +32,7 @@ export default function RenewableMapHighQuality() {
         >
         <div style={{ flex: 1, textAlign: "center" }}>
             <h3 className="text-lg font-bold" style={{ margin: 0 }}>
-            {isSolar ? "Solar" : "Wind"} Power Potential [GW]
+            {isSolar ? "Solar" : "Wind"} Power Potential (GW)
             </h3>
         </div>
 
