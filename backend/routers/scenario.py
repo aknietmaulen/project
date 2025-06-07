@@ -3,7 +3,9 @@ import pandas as pd
 import os
 
 router = APIRouter()
-SCENARIO_DIR = "./data/csv"
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SCENARIO_DIR = os.path.join(BASE_DIR, "data", "csv")
 
 
 @router.get("/metrics")

@@ -3,7 +3,9 @@ import pandas as pd
 import os
 
 router = APIRouter()
-DATA_DIR = "./data/csv"
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+DATA_DIR = os.path.join(BASE_DIR, "data", "csv")
 
 # 1. For SystemCostChart.jsx => cost_vs_tariff.csv
 @router.get("/cost-tariff")
@@ -34,24 +36,24 @@ def get_system_cost_breakdown():
 
 @router.get("/ramping")
 def get_ramping_curve():
-    path = "./data/csv/thermal_ramping.csv"
-    if not os.path.exists(path):
+    file_path = os.path.join(DATA_DIR, "thermal_ramping.csv")
+    if not os.path.exists(file_path):
         return {"error": "File not found"}
-    df = pd.read_csv(path)
+    df = pd.read_csv(file_path)
     return df.to_dict(orient="records")
 
 @router.get("/generation-mix")
 def get_generation_mix():
-    path = "./data/csv/generation_mix.csv"
-    if not os.path.exists(path):
+    file_path = os.path.join(DATA_DIR, "generation_mix.csv")
+    if not os.path.exists(file_path):
         return {"error": "File not found"}
-    df = pd.read_csv(path)
+    df = pd.read_csv(file_path)
     return df.to_dict(orient="records")
 
 @router.get("/emissions")
 def get_emissions():
-    path = "./data/csv/emissions.csv"
-    if not os.path.exists(path):
+    file_path = os.path.join(DATA_DIR, "emissions.csv")
+    if not os.path.exists(file_path):
         return {"error": "File not found"}
-    df = pd.read_csv(path)
+    df = pd.read_csv(file_path)
     return df.to_dict(orient="records")
