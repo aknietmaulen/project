@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 import Plot from "react-plotly.js"
 import axios from "axios"
-import "../../App.css"
+// import "../../App.css"
 
 export default function SystemCostChart() {
   const [data, setData] = useState([])

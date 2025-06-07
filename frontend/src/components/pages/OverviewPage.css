@@ -1,0 +1,29 @@
+/* OverviewPage.css */
+
+.overview-container {
+    min-height: 100vh;
+    background-color: #e6f4f1;
+    padding: 24px;
+  }
+  
+  .overview-title {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #1f2937;
+    margin-bottom: 24px;
+  }
+  
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Always 2 cards per row */
+    gap: 24px;
+  }
+  
+  .card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
