@@ -1,29 +1,47 @@
 /* OverviewPage.css */
 
 .overview-container {
-    min-height: 100vh;
-    background-color: #e6f4f1;
-    padding: 24px;
-  }
+  min-height: 100vh;
+  background-color: #daf6eb;
+  padding: 30px;
+  max-width: 1400px; /* Ограничение ширины */
+  margin: 0 auto; /* Центрирование */
+}
+
   
-  .overview-title {
-    text-align: center;
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #1f2937;
-    margin-bottom: 24px;
-  }
+.overview-title {
+  text-align: center;
+  font-size: 28px;
+  font-weight: bold;
+  color: #1f2937;
+  margin-bottom: 24px;
+}
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  gap: 24px;
+}
+
   
-  .cards-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Always 2 cards per row */
-    gap: 24px;
-  }
-  
-  .card {
-    background: white;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-  }
-  
+.card {
+  background: white;
+  border-radius: 12px;
+  padding: 12px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+  font-size: 0.9rem;
+  overflow-x: auto;
+  max-width: 100%;
+}
+
+.map-container {
+  max-width: 100%;
+  overflow-x: auto;
+  margin-top: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  background: white;
+  padding: 12px;
+}
+
+
+

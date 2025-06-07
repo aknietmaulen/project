@@ -18,7 +18,7 @@ export default function SystemCostChart() {
   const tariff = data.map(d => d.tariff)
 
   return (
-    <div className="bg-white shadow rounded-xl p-4 mt-4">
+      <div className="bg-white shadow rounded-xl p-4 mt-4 small-plot-container">
         <h3>Total System Cost</h3>
       <Plot
         data={[
@@ -53,8 +53,9 @@ export default function SystemCostChart() {
         ]}
         layout={{
           autosize: true,
-          height: 450,
-          margin: { t: 40 },
+          height: 400,
+          width: 600,
+          margin: { t: 10 },
           xaxis: { title: "RES Share (%)" },
           yaxis: {
             title: "Total Cost (M€)",
@@ -72,7 +73,7 @@ export default function SystemCostChart() {
           hovermode: "x unified"
         }}
         useResizeHandler={true}
-        // style={{ width: "100%", height: "100%" }}
+        style={{ width: "100%", height: "100%" }}
 
       />
     </div>

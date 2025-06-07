@@ -16,24 +16,27 @@ export default function CarrierCostTable() {
   return (
     <div className="carrier-table-wrapper">
       <h3 className="carrier-table-title">Cost Table by Carrier (M€)</h3>
-      <table className="carrier-table">
-        <thead>
-          <tr>
-            {columns.map(col => (
-              <th key={col}>{col}</th>
-            ))}
-          </tr>
-        </thead>
-        <tbody>
-          {table.map((row, idx) => (
-            <tr key={idx}>
+      <div className="carrier-table-container">
+        <table className="carrier-table">
+
+          <thead>
+            <tr>
               {columns.map(col => (
-                <td key={col}>{row[col]}</td>
+                <th key={col}>{col}</th>
               ))}
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {table.map((row, idx) => (
+              <tr key={idx}>
+                {columns.map(col => (
+                  <td key={col}>{row[col]}</td>
+                ))}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   )
 }

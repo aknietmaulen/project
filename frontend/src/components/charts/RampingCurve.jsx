@@ -41,7 +41,8 @@ export default function RampingCurve() {
         ]}
         layout={{
           autosize: true,
-          height: 450,
+          height: 400,
+          width: 650,
           xaxis: { title: "RES Share" },
           yaxis: { title: "Thermal Generator Ramping (MWh)" },
           legend: { x: 0.5, xanchor: "center", y: -0.2, orientation: "h" },

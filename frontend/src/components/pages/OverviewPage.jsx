@@ -8,6 +8,7 @@ import RampingCurve from "../charts/RampingCurve"
 import EmissionsChart from '../charts/EmissionsChart'
 import SolarMapHighQuality from '../maps/SolarMapInteractive'
 import WindMapHighQuality from '../maps/WindMapInteractive'
+import RenewableMapHighQuality from '../maps/Renewable'
 import "./OverviewPage.css"
 import axios from 'axios'
 // import "../../App.css"
@@ -29,12 +30,10 @@ export default function OverviewPage() {
         <div className="card"><EmissionsChart /></div>
       </div>
 
-      <div className="mt-10">
-        <SolarMapHighQuality />
+      <div className="mt-10 map-container">
+        <RenewableMapHighQuality />
       </div>
-      <div className="mt-10">
-        <WindMapHighQuality />
-      </div>
+
     </div>
   );
 }

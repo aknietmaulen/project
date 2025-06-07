@@ -43,6 +43,8 @@ export default function GenerationMixChart() {
       <Plot
         data={traces}
         layout={{
+          height: 400,
+          width: 650,
           xaxis: { title: "RES Share" },
           yaxis: { title: "Electricity Generation (GWh)" },
           showlegend: true,

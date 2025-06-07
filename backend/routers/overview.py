@@ -17,7 +17,7 @@ def get_cost_vs_tariff():
 # 2. For CarrierCostTable.jsx => cost_table_by_carriers.csv
 @router.get("/carrier-costs")
 def get_cost_table_by_carriers():
-    file_path = os.path.join(DATA_DIR, "cost_table_by_carriers.csv")
+    file_path = os.path.join(DATA_DIR, "cost_table_by_carriers_1.csv")
     if not os.path.exists(file_path):
         return {"error": "File not found"}
     df = pd.read_csv(file_path)

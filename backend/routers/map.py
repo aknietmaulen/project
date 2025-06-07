@@ -27,7 +27,7 @@ def get_solar_points():
     return points
 
 @router.get("/wind/points")
-def get_solar_points():
+def get_wind_points():
     path = "./data/renewable_profiles/profile_onwind.nc"
     if not os.path.exists(path):
         return {"error": "File not found"}

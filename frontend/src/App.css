@@ -115,6 +115,16 @@ html, body, #root {
   background-color: #f9fafb;
 }
 
+.small-chart {
+  height: 250px;
+  width: 100%;
+}
+
+.small-plot-container {
+  height: 110px;
+  width: 100%;
+}
+
 /* Responsive tweaks
 @media (max-width: 768px) {
   .dashboard {
@@ -133,4 +143,8 @@ html, body, #root {
   background-color: #e5e7eb;
 }
 
+.carrier-table-container {
+  display: flex;
+  justify-content: center;
+}
 
