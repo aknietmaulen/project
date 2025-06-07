@@ -13,7 +13,7 @@ import "./OverviewPage.css"
 import axios from 'axios'
 // import "../../App.css"
 
-axios.defaults.baseURL = 'http://localhost:8000'
+axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 
 export default function OverviewPage() {

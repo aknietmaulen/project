@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/static/css/main.1dacef33.css",
-    "main.js": "/static/js/main.89ccf9bf.js",
+    "main.js": "/static/js/main.1ab41b87.js",
     "static/media/pypsa-logo.webp": "/static/media/pypsa-logo.5f14b5491e16435a64af.webp",
     "index.html": "/index.html",
     "main.1dacef33.css.map": "/static/css/main.1dacef33.css.map",
-    "main.89ccf9bf.js.map": "/static/js/main.89ccf9bf.js.map"
+    "main.1ab41b87.js.map": "/static/js/main.1ab41b87.js.map"
   },
   "entrypoints": [
     "static/css/main.1dacef33.css",
-    "static/js/main.89ccf9bf.js"
+    "static/js/main.1ab41b87.js"
   ]
 }
