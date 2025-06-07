@@ -19,7 +19,7 @@ export default function RampingCurve() {
 
   return (
     <div className="bg-white shadow rounded-xl p-4 mt-4">
-      <h3 className="graph-card-title">Thermal Ramping</h3>
+      <h3 className="graph-card-title">Thermal Ramping (MWh)</h3>
       <Plot
         data={[
           {

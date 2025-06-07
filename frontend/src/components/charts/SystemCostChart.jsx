@@ -19,7 +19,7 @@ export default function SystemCostChart() {
 
   return (
       <div className="bg-white shadow rounded-xl p-4 mt-4 small-plot-container">
-        <h3>Total System Cost</h3>
+        <h3>Total System Cost (M€)</h3>
       <Plot
         data={[
           {

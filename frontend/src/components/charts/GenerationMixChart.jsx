@@ -17,7 +17,7 @@ export default function GenerationMixChart() {
     { key: "coal", label: "coal", color: "#707070" },
     { key: "CCGT", label: "CCGT", color: "#1F77B3" },
     { key: "OCGT", label: "OCGT", color: "#ADC6E8" },
-    { key: "onwind", label: "Onshore Wind", color: "#2B9F2C" },
+    { key: "onwind", label: "Onwind", color: "#2B9F2C" },
     { key: "solar", label: "Solar", color: "#FDFE02" },
     { key: "ror", label: "RoR", color: "#AED8E6" },
   ]
@@ -44,9 +44,11 @@ export default function GenerationMixChart() {
         data={traces}
         layout={{
           height: 400,
-          width: 650,
+          width: 620,
           xaxis: { title: "RES Share" },
-          yaxis: { title: "Electricity Generation (GWh)" },
+          yaxis: {
+            title: "Electricity Generation (GWh)",   tickformat: ",d" ,
+          },
           showlegend: true,
           margin: { t: 30 },
         }}
