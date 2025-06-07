@@ -1,13 +1,26 @@
-.cost-table-card {
+/* .cost-table-card {
     background: white;
     border-radius: 16px;
     padding: 20px;
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
     width: 100%;
-    max-width: 685px; /* чтобы быть равной с chart-card */
+    max-width: 685px; 
     margin-top: 40px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+  } */
+  .cost-table-card {
+    background: white;
+    border-radius: 16px;
+    padding: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+    width: 100%;
+    max-width: 685px;
+    min-height: 560px; /* 👈 точно такая же высота */
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* 👈 если нужно */
     align-items: center;
   }
   

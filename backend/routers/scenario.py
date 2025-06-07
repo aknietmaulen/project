@@ -82,6 +82,11 @@ def get_daily_profiles(res: float = Query(..., ge=0.1, le=0.6)):
     profile_dir = os.path.join(SCENARIO_DIR, "daily_profiles")
     res_int = int(res * 100)
 
+    def rgba(hex_color, alpha):
+        hex_color = hex_color.lstrip("#")
+        r, g, b = tuple(int(hex_color[i:i+2], 16) for i in (0, 2, 4))
+        return f"rgba({r},{g},{b},{alpha})"
+
     def load_profile(season):
         file_name = f"{season}_day_RES{res_int}.csv"
         path = os.path.join(profile_dir, file_name)
@@ -90,13 +95,11 @@ def get_daily_profiles(res: float = Query(..., ge=0.1, le=0.6)):
             return {"error": f"{file_name} not found"}
 
         df = pd.read_csv(path)
-
-        # Format time labels like "00:00", "01:00", etc.
         labels = df["snapshot"].apply(lambda x: x.split(" ")[1][:5]).tolist()
 
         carriers = [col for col in df.columns if col != "snapshot"]
         colors = {
-            "Load": "black",
+            "Load": "#000000",
             "coal": "#7f7f7f",
             "CCGT": "#1f77b4",
             "OCGT": "#ff7f0e",
@@ -107,21 +110,21 @@ def get_daily_profiles(res: float = Query(..., ge=0.1, le=0.6)):
             "hydro": "#17becf"
         }
 
-
         datasets = []
         for carrier in carriers:
+            is_load = carrier == "Load"
             datasets.append({
                 "label": carrier,
                 "data": df[carrier].round(2).tolist(),
-                "backgroundColor": colors.get(carrier, "#ccc"),
-                "borderColor": colors.get(carrier, "#ccc"),
-                "fill": carrier != "Load",
-                "borderWidth": 2 if carrier == "Load" else 1,
+                "backgroundColor": rgba(colors.get(carrier, "#cccccc"), 0.3) if not is_load else "transparent",
+                "borderColor": colors.get(carrier, "#cccccc"),
+                "fill": "stack" if not is_load else False,
+                "borderWidth": 2 if is_load else 1,
                 "pointRadius": 0,
                 "tension": 0.4,
-                "borderDash": [6, 3] if carrier == "Load" else []
+                "borderDash": [6, 3] if is_load else [],
+                "stack": None if is_load else "generation"
             })
-
 
         return {
             "labels": labels,
