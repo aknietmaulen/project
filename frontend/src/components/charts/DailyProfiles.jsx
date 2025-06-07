@@ -72,15 +72,23 @@ export default function DailyProfiles({ resShare }) {
 
   const layoutBase = (title) => ({
     title: { text: title, font: { size: 16 } },
-    margin: { t: 40, r: 20, l: 50, b: 40 },
+    margin: { t: 40, r: 20, l: 60, b: 60 },
     xaxis: {
-      title: "Time (hour)",
+      title: {
+        text: "Time (hour)",
+        font: { size: 14 },
+        standoff: 10
+      },
       tickmode: "array",
       tickvals: ["00:00", "03:00", "06:00", "09:00", "12:00", "15:00", "18:00", "21:00", "00:00"],
-      tickfont: { size: 11 }
+      tickfont: { size: 12 }
     },
     yaxis: {
-      title: "Generation (GW)",
+      title: {
+        text: "Generation (GW)",
+        font: { size: 14 },
+        standoff: 10
+      },
       tickformat: "~g",
       tickfont: { size: 12 }
     },
@@ -111,6 +119,7 @@ export default function DailyProfiles({ resShare }) {
       }
     ]
   })
+  
 
   return (
     <div className="daily-profiles-wrapper">

@@ -8,6 +8,15 @@ ChartJS.register(ArcElement, Tooltip, Legend)
 export default function GenerationPieChart({ resShare }) {
   const [genData, setGenData] = useState(null)
 
+  const colorMap = {
+    coal: "#707070",
+    CCGT: "#592693",
+    OCGT: "#FF0000",
+    onwind: "#2ca02c",
+    solar: "#ffff00",
+    ror: "#1f77b4"
+  }
+
   useEffect(() => {
     axios
       .get(`/scenario/generation-mix?res=${resShare}`)
@@ -30,17 +39,45 @@ export default function GenerationPieChart({ resShare }) {
           genData.ror,
         ],
         backgroundColor: [
-          "#9ca3af", "#60a5fa", "#fbbf24", "#34d399", "#f87171", "#a78bfa",
+          colorMap.coal,
+          colorMap.CCGT,
+          colorMap.OCGT,
+          colorMap.onwind,
+          colorMap.solar,
+          colorMap.ror
         ],
-        borderWidth: 1,
+        borderWidth: 1
+      }
+    ]
+  }
+
+  const options = {
+    plugins: {
+      tooltip: {
+        callbacks: {
+          label: function (context) {
+            const label = context.label || ""
+            const value = context.parsed || 0
+            return `${label}: ${value.toFixed(1)} GWh`
+          }
+        }
       },
-    ],
+      legend: {
+        position: "right",
+        labels: {
+          boxWidth: 14,
+          font: { size: 12 }
+        }
+      }
+    }
   }
 
   return (
     <div className="chart-card">
-      <h3 className="chart-title">Generation Mix for 2030 (RES {Math.round(resShare * 100)}%)</h3>
-      <Pie data={data} />
+      <h3 className="chart-title">
+        Generation Mix for 2030<br />RES {Math.round(resShare * 100)}% (GWh)
+      </h3>
+      <Pie data={data} options={options} />
     </div>
   )
 }
