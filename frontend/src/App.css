@@ -78,15 +78,13 @@ html, body, #root {
   padding: 32px;
 }
 
-.card {
+/* .card {
   background-color: #ffffff;
   border-radius: 20px;
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.08);
   padding: 10px;
   transition: all 0.2s ease-in-out;
-  width: 50%;
-}
-
+} */
 .card:hover {
   transform: translateY(-2px);
   box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
