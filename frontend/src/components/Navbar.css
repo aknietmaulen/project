@@ -1,0 +1,45 @@
+.navbar {
+    background-color: #059669; /* green */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 32px;
+    color: white;
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+  
+  .navbar a {
+    color: #fefefe;
+    margin: 0 16px;
+    text-decoration: none;
+  }
+  
+  .navbar a.active {
+    color: #facc15; /* yellow */
+  }
+  
+  /* Новые стили */
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .navbar-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .navbar-logo {
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+  }
+  
+  .navbar-title {
+    font-size: 1.2rem;
+    color: #fefefe;
+    font-weight: 600;
+  }
+  
