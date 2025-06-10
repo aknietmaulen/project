@@ -26,10 +26,10 @@ export default function DailyProfiles({ resShare }) {
         const transform = (profile) => {
           const stack = profile.datasets.filter(d => d.label !== "Load")
           const load = profile.datasets.find(d => d.label === "Load")
-
+        
           const traces = stack.map(d => ({
             x: profile.labels,
-            y: d.data,
+            y: d.data.map(v => v / 1e3),  
             name: d.label,
             type: "scatter",
             mode: "none",
@@ -39,11 +39,11 @@ export default function DailyProfiles({ resShare }) {
             line: { width: 0 },
             hoverinfo: "x+y+name"
           }))
-
+        
           if (load) {
             traces.push({
               x: profile.labels,
-              y: load.data,
+              y: load.data.map(v => v / 1e3),  
               name: "Load",
               type: "scatter",
               mode: "lines",
@@ -56,9 +56,9 @@ export default function DailyProfiles({ resShare }) {
               hoverinfo: "x+y+name"
             })
           }
-
+        
           return traces
-        }
+        }         
 
         setWinterData(transform(winter))
         setSummerData(transform(summer))
