@@ -19,6 +19,9 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import OverviewPage from './components/pages/OverviewPage'
 import ScenarioPage from './components/pages/ScenarioPage'
 import Navbar from './components/Navbar'
+// import axios from 'axios';
+
+// axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 
 function App() {
   return (

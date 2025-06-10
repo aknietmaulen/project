@@ -30,7 +30,7 @@ app = FastAPI()
 # CORS для взаимодействия фронта с API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
+    allow_origins=["http://127.0.0.1:8000", "http://localhost:3000", "https://pypsakz-2030-c28c17875072.herokuapp.com"],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
