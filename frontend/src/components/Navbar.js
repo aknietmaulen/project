@@ -1,40 +1,31 @@
-// // src/components/layout/Navbar.js
-// import { NavLink } from 'react-router-dom'
-
-// export default function Navbar() {
-//   return (
-//     <nav className="navbar">
-//       <div className="flex gap-6">
-//         <NavLink to="/" exact="true">
-//           Overview
-//         </NavLink>
-//         <NavLink to="/scenario">
-//           Scenario
-//         </NavLink>
-//       </div>
-//     </nav>
-//   )
-// }
-
-// src/components/layout/Navbar.js
+import { useState } from 'react'
 import { NavLink } from 'react-router-dom'
+import { FiMenu, FiX } from 'react-icons/fi'
 import logo from '../assets/pypsa-logo.webp'
-import './Navbar.css' // подключаем CSS
+import './Navbar.css'
 
 export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const toggleMenu = () => setIsOpen(!isOpen)
+
   return (
     <nav className="navbar">
       <div className="navbar-left">
-        <NavLink to="/" end>
-          Overview
-        </NavLink>
-        <NavLink to="/scenario">
-          Scenario
-        </NavLink>
-      </div>
-      <div className="navbar-right">
         <img src={logo} alt="Logo" className="navbar-logo" />
         <span className="navbar-title">PyPSA-KZ</span>
+        <button className="menu-toggle" onClick={toggleMenu}>
+          {isOpen ? <FiX size={22} /> : <FiMenu size={22} />}
+        </button>
+      </div>
+
+      <div className={`navbar-links ${isOpen ? 'open' : ''}`}>
+        <NavLink to="/" end onClick={() => setIsOpen(false)}>
+          Overview
+        </NavLink>
+        <NavLink to="/scenario" onClick={() => setIsOpen(false)}>
+          Scenario
+        </NavLink>
       </div>
     </nav>
   )

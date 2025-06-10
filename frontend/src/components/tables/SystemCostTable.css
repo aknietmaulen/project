@@ -64,3 +64,21 @@
     border-top: 2px solid #e5e7eb;
   }
   
+
+  @media (max-width: 768px) {
+  .cost-table-card {
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    padding: 1rem;
+  }
+
+  .cost-table {
+    font-size: 12px;
+  }
+
+  .cost-table th,
+  .cost-table td {
+    padding: 4px 6px;
+  }
+}

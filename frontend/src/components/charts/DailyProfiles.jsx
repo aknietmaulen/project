@@ -1,24 +1,28 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef } from "react"
 import axios from "axios"
 import Plot from "react-plotly.js"
+import Plotly from "plotly.js-dist-min"
+
 
 export default function DailyProfiles({ resShare }) {
   const [winterData, setWinterData] = useState([])
   const [summerData, setSummerData] = useState([])
+  const winterRef = useRef(null)
+  const summerRef = useRef(null)
 
-  const colorMap = {
-    coal: "#707070",
-    CCGT: "#592693",
-    OCGT: "#FF0000",
-    onwind: "#2ca02c",
-    solar: "#ffff00",
-    ror: "#1f77b4",
-    battery: "#c2c2f0",
-    hydro: "#76b5c5",
-    Load: "black"
-  }
 
   useEffect(() => {
+      const colorMap = {
+        coal: "#707070",
+        CCGT: "#592693",
+        OCGT: "#FF0000",
+        onwind: "#2ca02c",
+        solar: "#ffff00",
+        ror: "#1f77b4",
+        battery: "#c2c2f0",
+        hydro: "#76b5c5",
+        Load: "black"
+      }
     axios.get(`/scenario/daily-profiles?res=${resShare}`)
       .then(res => {
         const { winter, summer } = res.data
@@ -62,6 +66,11 @@ export default function DailyProfiles({ resShare }) {
 
         setWinterData(transform(winter))
         setSummerData(transform(summer))
+
+        setTimeout(() => {
+          if (winterRef.current) Plotly.Plots.resize(winterRef.current)
+          if (summerRef.current) Plotly.Plots.resize(summerRef.current)
+        }, 100)
       })
       .catch(err => {
         console.error("Failed to load daily profiles", err)
@@ -128,16 +137,20 @@ export default function DailyProfiles({ resShare }) {
   
         <div className="plots-inline">
           <Plot
+            key={`winter-${resShare}`}
+            ref={winterRef}
             data={winterData}
             layout={layoutBase("Winter Day Supply (Jan 15)")}
-            style={{ width: "400px", height: "420px" }}
+            style={{ width: "100%", minHeight: "400px" }}
             config={{ displayModeBar: false }}
           />
-  
+
           <Plot
+            key={`summer-${resShare}`}
+            ref={summerRef}
             data={summerData}
             layout={layoutBase("Summer Day Supply (Jul 15)")}
-            style={{ width: "400px", height: "420px" }}
+            style={{ width: "100%", minHeight: "400px"}}
             config={{ displayModeBar: false }}
           />
         </div>
