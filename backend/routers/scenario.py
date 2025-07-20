@@ -53,7 +53,8 @@ def get_generation_mix(res: float = Query(..., ge=0.1, le=0.6)):
         "OCGT": row["OCGT [GWh]"],
         "onwind": row["onwind [GWh]"],
         "solar": row["solar [GWh]"],
-        "ror": row["ror [GWh]"]
+        "ror": row["ror [GWh]"],
+        "hydro": row["hydro [GWh]"]
     }
 
 @router.get("/system-cost-breakdown")
