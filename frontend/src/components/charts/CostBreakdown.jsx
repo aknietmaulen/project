@@ -48,14 +48,12 @@ export default function CostBreakdown() {
         layout={{
           barmode: "group",
           autosize: true,
-          height: 400,
-          width: 650,
           xaxis: { title: "RES Share (%)" },
           yaxis: { title: "Cost (M€)" },
           legend: { x: 0.5, xanchor: "center", y: -0.2, orientation: "h" },
           margin: { t: 40 }
         }}
-        useResizeHandler={true}
+        useResizeHandler
         style={{ width: "100%", height: "100%" }}
       />
     </div>

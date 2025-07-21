@@ -14,7 +14,8 @@ export default function GenerationPieChart({ resShare }) {
     OCGT: "#FF0000",
     onwind: "#2ca02c",
     solar: "#ffff00",
-    ror: "#1f77b4"
+    ror: "#1f77b4",
+    hydro: "#76b5c5"
   }
 
   useEffect(() => {
@@ -27,7 +28,7 @@ export default function GenerationPieChart({ resShare }) {
   if (!genData) return <p className="loading-text">Loading chart...</p>
 
   const data = {
-    labels: ["Coal", "CCGT", "OCGT", "Onwind", "Solar", "ROR"],
+    labels: ["Coal", "CCGT", "OCGT", "Onwind", "Solar", "ROR", "Hydro"],
     datasets: [
       {
         data: [
@@ -37,6 +38,7 @@ export default function GenerationPieChart({ resShare }) {
           genData.onwind,
           genData.solar,
           genData.ror,
+          genData.hydro
         ],
         backgroundColor: [
           colorMap.coal,
@@ -44,7 +46,8 @@ export default function GenerationPieChart({ resShare }) {
           colorMap.OCGT,
           colorMap.onwind,
           colorMap.solar,
-          colorMap.ror
+          colorMap.ror,
+          colorMap.hydro
         ],
         borderWidth: 1
       }

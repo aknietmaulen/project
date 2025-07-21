@@ -4,11 +4,10 @@
   min-height: 100vh;
   background-color: #daf6eb;
   padding: 30px;
-  max-width: 1400px; /* Ограничение ширины */
-  margin: 0 auto; /* Центрирование */
+  max-width: 1400px;
+  margin: 0 auto;
 }
 
-  
 .overview-title {
   text-align: center;
   font-size: 28px;
@@ -16,13 +15,13 @@
   color: #1f2937;
   margin-bottom: 24px;
 }
+
 .cards-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   gap: 24px;
 }
 
-  
 .card {
   background: white;
   border-radius: 12px;
@@ -31,6 +30,37 @@
   font-size: 0.9rem;
   overflow-x: auto;
   max-width: 100%;
+  transition: all 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.1);
+}
+
+.card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #111827;
+}
+
+.card th,
+.card td {
+  border: 1px solid #d1d5db;
+  padding: 8px 10px;
+  text-align: right;
+}
+
+.card th {
+  background-color: #f3f4f6;
+  font-weight: 600;
+  text-align: center;
+}
+
+.card tbody tr:nth-child(even) {
+  background-color: #f9fafb;
 }
 
 .map-container {
@@ -43,5 +73,84 @@
   padding: 12px;
 }
 
+.map-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
 
+.map-header h3 {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
 
+.map-header select {
+  padding: 8px 14px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.map-header select:hover {
+  background-color: #f0f0f0;
+}
+
+.map-wrapper {
+  width: 100%;
+  height: auto;
+}
+
+/* Ensure plotly charts and tables fit in mobile cards */
+.card .js-plotly-plot {
+  width: 100% !important;
+  height: auto !important;
+}
+
+.card table {
+  width: 100%;
+  overflow-x: auto;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .cards-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card {
+    padding: 16px;
+  }
+
+  .map-container {
+    padding: 10px;
+  }
+
+  .overview-title {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overview-title {
+    font-size: 20px;
+  }
+
+  .card h3 {
+    font-size: 18px;
+  }
+
+  .map-header h3 {
+    font-size: 18px;
+  }
+
+  .map-header select {
+    font-size: 14px;
+    padding: 6px 12px;
+  }
+}

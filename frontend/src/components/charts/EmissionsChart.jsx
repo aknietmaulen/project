@@ -46,14 +46,14 @@ export default function EmissionsChart() {
       <Plot
         data={traces}
         layout={{
-          height: 400,
-          width: 650,
           barmode: "stack",
           xaxis: { title: "RES Share" },
           yaxis: { title: "Total Emissions (Mt CO₂)" },
           legend: { orientation: "h" },
           margin: { t: 30 },
         }}
+        useResizeHandler
+        style={{ width: "100%", height: "100%" }}
         // style={{ width: "100%", height: "500px" }}
       />
     </div>

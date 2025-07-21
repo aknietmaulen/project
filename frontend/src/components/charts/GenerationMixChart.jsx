@@ -20,6 +20,7 @@ export default function GenerationMixChart() {
     { key: "onwind", label: "Onwind", color: "#2B9F2C" },
     { key: "solar", label: "Solar", color: "#FDFE02" },
     { key: "ror", label: "RoR", color: "#AED8E6" },
+    { key: "hydro", label: "hydro", color: "#76b5c5" },
   ]
 
   const resShare = data.map((row) => row["res_share"])
@@ -43,8 +44,6 @@ export default function GenerationMixChart() {
       <Plot
         data={traces}
         layout={{
-          height: 400,
-          width: 620,
           xaxis: { title: "RES Share" },
           yaxis: {
             title: "Electricity Generation (GWh)",   tickformat: ",d" ,
@@ -52,6 +51,8 @@ export default function GenerationMixChart() {
           showlegend: true,
           margin: { t: 30 },
         }}
+        useResizeHandler
+        style={{ width: "100%", height: "100%" }}
         // style={{ width: "100%", height: "500px" }}
       />
     </div>

@@ -53,8 +53,6 @@ export default function SystemCostChart() {
         ]}
         layout={{
           autosize: true,
-          height: 400,
-          width: 600,
           margin: { t: 10 },
           xaxis: { title: "RES Share (%)" },
           yaxis: {
@@ -72,7 +70,7 @@ export default function SystemCostChart() {
           legend: { x: 0.5, xanchor: "center", y: -0.2, orientation: "h" },
           hovermode: "x unified"
         }}
-        useResizeHandler={true}
+        useResizeHandler
         style={{ width: "100%", height: "100%" }}
 
       />
