@@ -56,22 +56,23 @@ export default function SystemCostChart() {
           margin: { t: 10 },
           xaxis: { title: "RES Share (%)" },
           yaxis: {
-            title: "Total Cost (M€)",
+            title: "Total Cost",
             titlefont: { color: "blue" },
-            tickfont: { color: "blue" }
+            tickfont: { color: "blue" },
+            ticksuffix: " M€"   
           },
           yaxis2: {
-            title: "Tariff (€/MWh)",
+            title: "Tariff",
             overlaying: "y",
             side: "right",
             titlefont: { color: "orange" },
-            tickfont: { color: "orange" }
+            tickfont: { color: "orange" },
+            ticksuffix: " €/MWh"   
           },
           legend: { x: 0.5, xanchor: "center", y: -0.2, orientation: "h" },
           hovermode: "x unified"
         }}
-        useResizeHandler
-        style={{ width: "100%", height: "100%" }}
+
 
       />
     </div>

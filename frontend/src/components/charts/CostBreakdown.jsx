@@ -49,7 +49,12 @@ export default function CostBreakdown() {
           barmode: "group",
           autosize: true,
           xaxis: { title: "RES Share (%)" },
-          yaxis: { title: "Cost (M€)" },
+          yaxis: {
+            title: "Cost",
+            ticksuffix: " M€",
+            tickfont: { color: "black" },
+            titlefont: { color: "black" }
+          },
           legend: { x: 0.5, xanchor: "center", y: -0.2, orientation: "h" },
           margin: { t: 40 }
         }}
