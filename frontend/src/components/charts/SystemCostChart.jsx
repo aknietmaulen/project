@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react"
 import Plot from "react-plotly.js"
 import axios from "axios"
-// import "../../App.css"
 
 export default function SystemCostChart() {
   const [data, setData] = useState([])
@@ -11,15 +10,16 @@ export default function SystemCostChart() {
       .then(res => setData(res.data))
   }, [])
 
-  if (!data.length) return <p className="text-sm text-gray-500">Loading cost chart...</p>
+  if (!data.length)
+    return <p className="text-sm text-gray-500">Loading cost chart...</p>
 
-  const res = data.map(d => d.res_share * 100)
+  const res = data.map(d => d.res_share * 100) // Convert to percentage
   const cost = data.map(d => d.total_cost)
   const tariff = data.map(d => d.tariff)
 
   return (
-      <div className="bg-white shadow rounded-xl p-4 mt-4 small-plot-container">
-        <h3>Total System Cost (M€)</h3>
+    <div className="bg-white shadow rounded-xl p-4 mt-4 small-plot-container">
+      <h3 className="text-lg font-bold mb-2">System Cost and Tariff</h3>
       <Plot
         data={[
           {
@@ -53,27 +53,38 @@ export default function SystemCostChart() {
         ]}
         layout={{
           autosize: true,
-          margin: { t: 10 },
-          xaxis: { title: "RES Share (%)" },
+          margin: { t: 30, l: 60, r: 60, b: 50 },
+          xaxis: {
+            title: "RES Share (%)",
+            ticksuffix: "%",
+            showgrid: true
+          },
           yaxis: {
-            title: "Total Cost",
+            title: "Total System Cost (M€)",
             titlefont: { color: "blue" },
             tickfont: { color: "blue" },
-            ticksuffix: " M€"   
+            ticksuffix: " M€",
+            showgrid: true
           },
           yaxis2: {
-            title: "Tariff",
+            title: "Tariff (€/MWh)",
             overlaying: "y",
             side: "right",
             titlefont: { color: "orange" },
             tickfont: { color: "orange" },
-            ticksuffix: " €/MWh"   
+            ticksuffix: " €/MWh",
+            showgrid: false
           },
-          legend: { x: 0.5, xanchor: "center", y: -0.2, orientation: "h" },
+          legend: {
+            x: 0.5,
+            xanchor: "center",
+            y: -0.25,
+            orientation: "h"
+          },
           hovermode: "x unified"
         }}
-
-
+        useResizeHandler
+        style={{ width: "100%", height: "100%" }}
       />
     </div>
   )

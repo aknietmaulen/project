@@ -17,10 +17,10 @@
     box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
     width: 100%;
     max-width: 685px;
-    min-height: 560px; /* 👈 точно такая же высота */
+    min-height: 560px; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* 👈 если нужно */
+    justify-content: center;
     align-items: center;
   }
   

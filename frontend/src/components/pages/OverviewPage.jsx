@@ -12,6 +12,7 @@ import RenewableMapHighQuality from '../maps/Renewable'
 import ProjectInfo from '../info/ProjectInfo'
 import "./OverviewPage.css"
 import axios from 'axios'
+import ThermalComparisonChart from '../charts/ThermalComparison'
 // import "../../App.css"
 
 axios.defaults.baseURL = process.env.REACT_APP_API_URL;
@@ -20,17 +21,18 @@ axios.defaults.baseURL = process.env.REACT_APP_API_URL;
 export default function OverviewPage() {
   return (
     <div className="overview-container">
-      <h2 className="overview-title">About Our Project</h2>
-      <ProjectInfo />
+      {/* <h2 className="overview-title">About Our Project</h2>
+      <ProjectInfo /> */}
 
       <h2 className="overview-title">Overview Dashboard</h2>
 
       <div className="cards-grid">
-        <ProjectInfo />
+        <div className="card"><ProjectInfo /></div>
         <div className="card"><SystemCostChart /></div>
         <div className="card"><CostBreakdown /></div>
         <div className="card"><CarrierCostTable /></div>
         <div className="card"><RampingCurve /></div>
+        <div className="card"><ThermalComparisonChart/></div>
         <div className="card"><GenerationMixChart /></div>
         <div className="card"><EmissionsChart /></div>
       </div>

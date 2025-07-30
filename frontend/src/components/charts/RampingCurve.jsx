@@ -1,25 +1,24 @@
 import { useEffect, useState } from "react"
 import Plot from "react-plotly.js"
 import axios from "axios"
-// import "../../App.css"
 
 export default function RampingCurve() {
   const [data, setData] = useState([])
 
   useEffect(() => {
     axios.get("/overview/ramping")
-        .then(res => setData(res.data))
-    }, [])
-
+      .then(res => setData(res.data))
+      .catch(err => console.error("Failed to fetch ramping data:", err))
+  }, [])
 
   if (!data.length) return <p className="text-sm text-gray-500">Loading ramping curve...</p>
 
-  const res = data.map(d => d.res_share)
+  const res = data.map(d => d.res_share * 100) // Convert to percent
   const ramping = data.map(d => d.thermal_ramping / 1e6) // Convert to MWh
 
   return (
     <div className="bg-white shadow rounded-xl p-4 mt-4">
-      <h3 className="graph-card-title">Thermal Ramping (MWh)</h3>
+      <h3 className="text-lg font-bold mb-2">Thermal Generator Ramping</h3>
       <Plot
         data={[
           {
@@ -41,13 +40,25 @@ export default function RampingCurve() {
         ]}
         layout={{
           autosize: true,
-
-          xaxis: { title: "RES Share" },
-          yaxis: { title: "Thermal Generator Ramping (MWh)" },
-          legend: { x: 0.5, xanchor: "center", y: -0.2, orientation: "h" },
+          xaxis: {
+            title: "RES Share (%)",
+            ticksuffix: "%",
+            showgrid: true
+          },
+          yaxis: {
+            title: "Thermal Ramping (MWh)",
+            tickformat: ",.0f", // thousands separator
+            ticksuffix: " MWh",
+            showgrid: true
+          },
+          legend: {
+            x: 0.5,
+            xanchor: "center",
+            y: -0.2,
+            orientation: "h"
+          },
           margin: { t: 40 }
         }}
-        // style={{ width: "100%", height: "100%" }}
         useResizeHandler
         style={{ width: "100%", height: "100%" }}
       />

@@ -48,7 +48,11 @@ export default function CostBreakdown() {
         layout={{
           barmode: "group",
           autosize: true,
-          xaxis: { title: "RES Share (%)" },
+          xaxis: {
+            title: "RES Share (%)",
+            tickformat: ",.0f",
+            ticksuffix: "%"
+          },
           yaxis: {
             title: "Cost",
             ticksuffix: " M€",
@@ -58,6 +62,7 @@ export default function CostBreakdown() {
           legend: { x: 0.5, xanchor: "center", y: -0.2, orientation: "h" },
           margin: { t: 40 }
         }}
+
         useResizeHandler
         style={{ width: "100%", height: "100%" }}
       />

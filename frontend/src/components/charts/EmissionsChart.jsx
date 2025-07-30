@@ -14,13 +14,13 @@ export default function EmissionsChart() {
 
   if (!data.length) return <p className="text-sm text-gray-500">Loading CO₂ emissions...</p>
 
-  const x = data.map(row => row["RES Share"])
+  const x = data.map(row => row["RES Share"] * 100) // Convert to percent
 
   const traces = [
     {
       x,
       y: data.map(row => row.coal),
-      name: "coal",
+      name: "Coal",
       type: "bar",
       marker: { color: "#707070" },
     },
@@ -47,14 +47,19 @@ export default function EmissionsChart() {
         data={traces}
         layout={{
           barmode: "stack",
-          xaxis: { title: "RES Share" },
-          yaxis: { title: "Total Emissions (Mt CO₂)" },
+          xaxis: {
+            title: "RES Share (%)",
+            ticksuffix: "%",
+          },
+          yaxis: {
+            title: "Total Emissions (Mt CO₂)",
+            tickformat: ",.2f",
+          },
           legend: { orientation: "h" },
           margin: { t: 30 },
         }}
         useResizeHandler
         style={{ width: "100%", height: "100%" }}
-        // style={{ width: "100%", height: "500px" }}
       />
     </div>
   )

@@ -44,17 +44,26 @@ export default function GenerationMixChart() {
       <Plot
         data={traces}
         layout={{
-          xaxis: { title: "RES Share" },
-          yaxis: {
-            title: "Electricity Generation (GWh)",   tickformat: ",d" ,
+          barmode: "group",
+          autosize: true,
+          xaxis: {
+            title: "RES Share (%)",
+            tickformat: ",.0f",
+            ticksuffix: "%"
           },
-          showlegend: true,
-          margin: { t: 30 },
+          yaxis: {
+            title: "Cost",
+            ticksuffix: " M€",
+            tickfont: { color: "black" },
+            titlefont: { color: "black" }
+          },
+          legend: { x: 0.5, xanchor: "center", y: -0.2, orientation: "h" },
+          margin: { t: 40 }
         }}
         useResizeHandler
         style={{ width: "100%", height: "100%" }}
-        // style={{ width: "100%", height: "500px" }}
       />
     </div>
   )
+
 }

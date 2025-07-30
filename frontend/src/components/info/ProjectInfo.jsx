@@ -4,10 +4,10 @@ export default function ProjectInfo() {
   return (
     <div className="p-6 max-w-4xl mx-auto">
       <div className="bg-white rounded-2xl shadow-lg p-6 space-y-6 border border-gray-200">
-        <h2 className="text-2xl font-bold text-gray-800">📘 Project Information</h2>
+        <h3 className="text-2xl font-bold text-gray-800">Project Information</h3>
 
         <div>
-          <h3 className="text-xl font-semibold text-blue-700">Goal</h3>
+          <h4 className="text-xl font-semibold text-blue-700">Goal</h4>
           <p className="text-gray-700">
             The goal of this project is to analyze the cost structure and generation mix of the electricity market
             using real-world data and interactive visualizations to support policy design and scenario exploration.
@@ -15,7 +15,7 @@ export default function ProjectInfo() {
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold text-blue-700">Relevance</h3>
+          <h4 className="text-xl font-semibold text-blue-700">Relevance</h4>
           <p className="text-gray-700">
             With growing demand for clean energy and sustainability, understanding the impact of tariffs, renewable integration,
             and infrastructure planning is essential for building resilient and efficient power systems.
@@ -23,7 +23,7 @@ export default function ProjectInfo() {
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold text-blue-700">General Assumptions</h3>
+          <h4 className="text-xl font-semibold text-blue-700">General Assumptions</h4>
           <ul className="list-disc list-inside text-gray-700 space-y-1">
             <li>Data from 2018 and 2020 is used for modeling and validation.</li>
             <li>Tariffs are based on current and projected market scenarios.</li>
@@ -32,7 +32,7 @@ export default function ProjectInfo() {
         </div>
 
         <div>
-          <h3 className="text-xl font-semibold text-blue-700">👥 Team</h3>
+          <h4 className="text-xl font-semibold text-blue-700">Team</h4>
           <p className="text-gray-700">
             This project is developed by a research team under the Power Market Modeling Initiative.
           </p>
