@@ -16,7 +16,7 @@ export default function CarrierCostTable() {
   return (
     <div className="carrier-table-wrapper">
       <h3 className="carrier-table-title">Cost Table by Carrier (M€)</h3>
-      <div className="carrier-table-container">
+      <div className="carrier-table-container mx-auto">
         <table className="carrier-table">
 
           <thead>
